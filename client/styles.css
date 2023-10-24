@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Hey Gorgeous";
+    src: url("./webfontkit-20231024-183222/heygorgeous-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Altima";
+    src: url("./webfontkit-20231024-183222/altima-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 10px auto;
+    gap: 15px;
+
+}
+
+#praiseForm {
+    text-align: center;
+}
+
+#allstars-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: content-box;
+    gap: 25px;
+}
+
+#allstars-container h2 {
+    font-family: Altima serif;
+
+
+}
+
+#allstars-form, #delete-allstars-form {
+    text-align: center;
+    align-items: center;
+}
+
+
+#allstars-form input {
+    margin: 10px;
+    width: 100%;
+}
+
+#delete-allstars-form input {
+    margin: 10px;
+    width: 100%;
+}
+
+#allstars-form button, #delete-allstars-form button {
+    margin: 10px;
+    width: 100%;
+}
+
+#allstars {
+    border: #00000a solid 1px;
+    border-radius: 13%;
+    text-align: center;
+    margin: 10px auto;
+    padding: 5px;
+    background-image: url("https://media.discordapp.net/attachments/562459983711567888/1166502005020295168/opac.png?ex=654ab8a6&is=653843a6&hm=b851893127cc886993842b32111f012339f349d236d5cf08f2a8ed554fc24d93&=&width=887&height=887");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#allstars h2 {
+    font-size: 2rem;
+    margin: 5px auto;
+    padding: 15px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get a fortune</button>
+      <form id="praiseForm">
+        <label for="name">Receive Praise!</label>
+        <br>
+        <input type="text" name="name" id="name" placeholder="Enter name here">
+        <button>Submit</button>
+      </form>
+
+      <section id="allstars-container">
+        <form id="allstars-form">
+          <label for="name">Become an All-Star!</label>
+          <br>
+          <input type="text" name="name" id="allstar-name" placeholder="Enter name here">
+          <br>
+          <label for="allstar-pos">Desired List Position</label>
+          <select name="position" id="allstar-pos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br>
+          <button>Submit</button>
+        </form>
+        <div id="allstars">
+          <h2>All-Stars</h2>
+          <ul id="allstars-list">
+            <li id = "a1">Hey</li>
+            <li id = "a2">Now</li>
+            <li id = "a3">You're</li>
+            <li id = "a4">*You*</li>
+          </ul>
+        </div>
+        <form id="delete-allstars-form">
+          <label for="name">Delete All-Star...</label>
+          <br>
+          <input type="text" name="name" id="delete-allstar-name" placeholder="Enter position to remove here">
+          <br>
+          <br>
+          <button>Delete All-Star</button>
+        </form>
+      </section>
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
