@@ -7,13 +7,15 @@
   </head>
   <body>
     <div class="container">
+      <div id="top-buttons">
       <button id="complimentButton">Get a compliment</button>
       <button id="fortuneButton">Get a fortune</button>
+      </div>
       <form id="praiseForm">
         <label for="name">Receive Praise!</label>
         <br>
         <input type="text" name="name" id="name" placeholder="Enter name here">
-        <button>Submit</button>
+        <button id="submit-praise-button">Submit</button>
       </form>
 
       <section id="allstars-container">
@@ -30,7 +32,7 @@
             <option value="4">4</option>
           </select>
           <br>
-          <button>Submit</button>
+          <button id="submit-allstar-button">Submit</button>
         </form>
         <div id="allstars">
           <h2>All-Stars</h2>
@@ -44,10 +46,10 @@
         <form id="delete-allstars-form">
           <label for="name">Delete All-Star...</label>
           <br>
-          <input type="text" name="name" id="delete-allstar-name" placeholder="Enter position to remove here">
+          <input type="text" name="name" id="delete-allstar-name" placeholder="Enter position to remove here (1-4)">
           <br>
           <br>
-          <button>Delete All-Star</button>
+          <button id="delete-allstars-button">Delete All-Star</button>
         </form>
       </section>
 
