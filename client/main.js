@@ -3,6 +3,10 @@ let fortuneBtn = document.getElementById("fortuneButton")
 let praiseForm = document.getElementById("praiseForm")
 let allstarsForm = document.getElementById("allstars-form")
 let allstarsDeleteForm = document.getElementById("delete-allstars-form")
+
+let audio = document.getElementById("audio")
+audio.volume = 0.005
+
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
         .then(res => {
