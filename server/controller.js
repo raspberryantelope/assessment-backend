@@ -60,7 +60,12 @@ module.exports = {
             name: name,
             position: position
         }
-        db.splice(position-1, 1)
+        for (let i = 0; i < db.length; i++) {
+            if (db[i].position === position) {
+                db.splice(i, 1);
+                break;
+            }
+        }
         console.log(db)
         response.status(200).send(responseBody)
 
