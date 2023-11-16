@@ -15,5 +15,4 @@ app.post("/api/praise", receivePraise)
 app.put("/api/allstars", becomeAllstar)
 app.delete("/api/allstars/:id", deleteAllstar)
 
-nodemon
 app.listen(4000, () => console.log("Server running on 4000"));
