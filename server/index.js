@@ -1,11 +1,10 @@
 const express = require("express");
 const cors = require("cors");
-
 const app = express();
 
 app.use(cors());
 
-app.use(express.static(`${__dirname}/client`));
+app.use(express.static(`${__dirname}`));
 
 const { getCompliment, getFortune, receivePraise, becomeAllstar, deleteAllstar } = require('./controller');
 
