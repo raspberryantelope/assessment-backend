@@ -39,6 +39,7 @@ module.exports = {
     },
 
     becomeAllstar: (request, response) => {
+        try {
         let name = request.body.name
         let position = request.body.pos
         let responseBody = {
@@ -49,6 +50,9 @@ module.exports = {
         db[position-1] = responseBody
         console.log(db)
         response.status(200).send(responseBody)
+    } catch (error) {
+        console.error(error)
+        response.status(500).send("Server error" + error)}
     },
 
     deleteAllstar: (request, response) => {
