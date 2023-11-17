@@ -30,7 +30,7 @@ let receivePraise = (event) => {
     event.preventDefault()
     let name = document.getElementById("name").value
     axios
-        .post("/api/praise/", { name })
+        .post("http://raspberryantelope.com/api/praise/", { name })
         .then(response => {
             let data = response.data
             alert(data)
@@ -40,14 +40,14 @@ let receivePraise = (event) => {
         })
 }
 
-let becomeAllstar = () => {
+let becomeAllstar = (event) => {
     event.preventDefault()
     let name = document.getElementById("allstar-name").value
     let pos = document.getElementById("allstar-pos").value
     document.getElementById("allstar-name").value = ""
     document.getElementById("allstar-pos").value = ""
     axios
-        .put("/api/allstars/", { name, pos })
+        .put("http://raspberryantelope.com/api/allstars/", { name, pos })
         .then(response => {
             // let { position, name } = response.body
             let { name } = response.data
