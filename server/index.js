@@ -2,9 +2,9 @@ const express = require("express");
 const cors = require("cors");
 let path = require("path");
 const app = express();
-
+let bodyParser = require('body-parser')
 app.use(cors());
-
+app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/client`));
 
 app.get('/webfontkit-20231024-183222/*', (req, res) => {
