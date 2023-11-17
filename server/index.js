@@ -15,6 +15,10 @@ app.post("/api/praise", receivePraise)
 app.put("/api/allstars", becomeAllstar)
 app.delete("/api/allstars/:id", deleteAllstar)
 
+app.get(['*.js', '*.css', '*.wav'], (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', req.url));
+});
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
