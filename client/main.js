@@ -7,8 +7,8 @@ let allstarsDeleteForm = document.getElementById("delete-allstars-form")
 let audio = document.getElementById("audio")
 audio.volume = 0.005
 
-const getCompliment = () => {
-    axios.get("http://localhost:4000/api/compliment/")
+const getCompliment = (event) => {
+    axios.get("/api/compliment/")
         .then(res => {
             const data = res.data;
             alert(data);
@@ -17,7 +17,7 @@ const getCompliment = () => {
 
 let getFortune = () => {
     axios
-        .get("http://localhost:4000/api/fortune/")
+        .get("/api/fortune/")
         .then(response => {
             let data = response.data
             alert(data)
@@ -30,7 +30,7 @@ let receivePraise = () => {
     event.preventDefault()
     let name = document.getElementById("name").value
     axios
-        .post("http://localhost:4000/api/praise/", { name })
+        .post("/api/praise/", { name })
         .then(response => {
             let data = response.data
             alert(data)
@@ -47,7 +47,7 @@ let becomeAllstar = () => {
     document.getElementById("allstar-name").value = ""
     document.getElementById("allstar-pos").value = ""
     axios
-        .put("http://localhost:4000/api/allstars/", { name, pos })
+        .put("/api/allstars/", { name, pos })
         .then(response => {
             // let { position, name } = response.body
             let { name } = response.data
@@ -67,7 +67,7 @@ let deleteAllstar = () => {
     document.getElementById("delete-allstar-name").value = ""
     event.preventDefault()
     axios
-        .delete(`http://localhost:4000/api/allstars/${id}`)
+        .delete(`/api/allstars/${id}`)
         .then(response => {
             let { name, position } = response.data
             let allstarsListToUpdate = document.querySelector("#" + "a" + position)
