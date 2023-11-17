@@ -7,7 +7,12 @@ app.use(cors());
 
 app.use(express.static(`${__dirname}/client`));
 
+app.get('/webfontkit-20231024-183222/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', req.url));
+});
+
 const { getCompliment, getFortune, receivePraise, becomeAllstar, deleteAllstar } = require('./controller');
+
 
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune)
