@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+let path = require("path");
 const app = express();
 
 app.use(cors());
@@ -15,5 +15,8 @@ app.post("/api/praise", receivePraise)
 app.put("/api/allstars", becomeAllstar)
 app.delete("/api/allstars/:id", deleteAllstar)
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+});
 
 app.listen(4000, () => console.log("Server running on 4000"));
