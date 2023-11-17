@@ -26,7 +26,7 @@ let getFortune = () => {
             console.log(error)
         })
 }
-let receivePraise = () => {
+let receivePraise = (event) => {
     event.preventDefault()
     let name = document.getElementById("name").value
     axios
