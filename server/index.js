@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "client")));
 const { getCompliment, getFortune, receivePraise, becomeAllstar, deleteAllstar } = require('./controller');
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "index.html"));
+    res.sendFile(path.join(__dirname, "../client", "index.html"));
 });
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune)
