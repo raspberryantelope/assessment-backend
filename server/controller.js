@@ -1,5 +1,10 @@
 let db = require('./db.json')
-
+let Rollbar = require('rollbar')
+let rollbar = new Rollbar({
+    accessToken: '<ServerAccessToken>',
+    captureUncaught: true,
+    captureUnhandledRejections: true,
+})
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -52,26 +57,32 @@ module.exports = {
         response.status(200).send(responseBody)
     } catch (error) {
         console.error(error)
+        rollbar.log(error)
         response.status(500).send("Server error" + error)}
     },
 
     deleteAllstar: (request, response) => {
-        let position = request.params.id
-        let id = db[position-1].id
-        let name = db[position-1].name
-        let responseBody = {
-            id: id,
-            name: name,
-            position: position
-        }
-        for (let i = 0; i < db.length; i++) {
-            if (db[i].position === position) {
-                db.splice(i, 1);
-                break;
+        try {
+            let position = request.params.id
+            let id = db[position-1].id
+            let name = db[position-1].name
+            let responseBody = {
+                id: id,
+                name: name,
+                position: position
             }
+            for (let i = 0; i < db.length; i++) {
+                if (db[i].position === position) {
+                    db.splice(i, 1);
+                    break;
+                }
+            }
+            console.log(db)
+            response.status(200).send(responseBody)
+        } catch (error) {
+            console.error(error);
+            rollbar.log(error)
+            response.status(500).send('Internal Server Error');
         }
-        console.log(db)
-        response.status(200).send(responseBody)
-
     }
 }
