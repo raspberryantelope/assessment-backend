@@ -1,7 +1,7 @@
 let db = require('./db.json')
 let Rollbar = require('rollbar')
 let rollbar = new Rollbar({
-    accessToken: '<ServerAccessToken>',
+    accessToken: 'bfd5c70b4ab7413aad426f0d41c883b2',
     captureUncaught: true,
     captureUnhandledRejections: true,
 })
